@@ -10,6 +10,7 @@
     ~/.zshrc: 
     ~/.vimrc: 
     ~/.vim:
+    ~/.oh-my-zsh:
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.inputrc:
@@ -18,3 +19,4 @@
 - shell:
     - [git submodule sync --recursive, Installing submodules]
     - git update-submodules
+    - [chsh -s $(which zsh), Making zsh the default shell]

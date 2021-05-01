@@ -20,3 +20,6 @@
 [submodule "vim/pack/vendor/start/fzf"]
 	path = vim/pack/vendor/start/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
