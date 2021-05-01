@@ -227,9 +227,9 @@ set nobackup
 set noswapfile
 
 set runtimepath+=~/.fzf
-set runtimepath^=~/.vim/bundle/nerdcommenter
+set runtimepath^=~/.vim/pack/vendor/start//nerdcommenter
 packloadall
-silen! helptags ALL
+silent! helptags ALL
 "设置历史记录步数"
 set history=1000
 " 设置fzf.vim快捷键
