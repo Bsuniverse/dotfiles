@@ -9,7 +9,11 @@
     ~/.bashrc: 
     ~/.zshrc: 
     ~/.vimrc: 
+    ~/.vim:
     ~/.gitconfig:
+    ~/.gitignore_global:
+    ~/.inputrc:
+    ~/.pythonrc:
 
 - shell:
     - [git submodule sync --recursive, Installing submodules]

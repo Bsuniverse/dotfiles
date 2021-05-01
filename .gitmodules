@@ -2,3 +2,18 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "vim/pack/vendor/start/nerdcommenter"]
+	path = vim/pack/vendor/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
+[submodule "vim/pack/vendor/start/ale"]
+	path = vim/pack/vendor/start/ale
+	url = https://github.com/dense-analysis/ale.git
+[submodule "vim/pack/vendor/start/Fzf.vim"]
+	path = vim/pack/vendor/start/Fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/pack/vendor/start/lightline"]
+	path = vim/pack/vendor/start/lightline
+	url = https://github.com/itchyny/lightline.vim
+[submodule "vim/pack/vendor/start/nerdtree"]
+	path = vim/pack/vendor/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git

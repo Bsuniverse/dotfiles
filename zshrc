@@ -102,3 +102,4 @@ alias chfont='/data/data/com.termux/files/home/.termux/fonts.sh'
 source /data/data/com.termux/files/home/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PYTHONSTARTUP=$HOME/.pythonrc
