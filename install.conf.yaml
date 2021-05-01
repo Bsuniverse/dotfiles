@@ -1,19 +1,16 @@
 - defaults:
     link:
+      create: true
       relink: true
 
 - clean: ['~']
 
 - link:
     ~/.bashrc: 
-      relink: true
-      path: bashrc
     ~/.zshrc: 
-      relink: true
-      path: zshrc
     ~/.vimrc: 
-      relink: true
-      path: vimrc
+    ~/.gitconfig:
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule sync --recursive, Installing submodules]
+    - git update-submodules

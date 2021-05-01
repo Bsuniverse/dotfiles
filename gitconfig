@@ -1,0 +1,28 @@
+[user]
+		name = Bsuniverse
+		email = chenhaoyu2012@gmail.com
+
+[push]
+		default = simple
+
+[pull]
+		rebase = false
+
+[color]
+		ui = auto
+
+[core]
+		editor = vim
+		excludesfile = ~/.gitignore_global
+
+[merge]
+		tool = vimdiff
+
+[alias]
+		graph = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%aN, %ar)'
+		update-submodules = submodule update --init --recursive
+		upgrade-submodules = submodule update --init --remote
+
+# Allow local customizations
+[include]
+		path = ~/.gitconfig_local
