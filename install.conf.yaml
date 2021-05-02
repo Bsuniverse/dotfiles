@@ -15,6 +15,7 @@
     ~/.gitignore_global:
     ~/.inputrc:
     ~/.pythonrc:
+    ~/.tmux.conf:
 
 - shell:
     - [git submodule sync --recursive, Installing submodules]
