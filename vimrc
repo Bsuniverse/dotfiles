@@ -46,6 +46,7 @@ endif
 "--------------------
 " Indent and editing
 "--------------------
+
 syntax on " turn on syntax highlighting
 set shortmess+=I " disable startup message
 set nu " number lines
@@ -89,22 +90,22 @@ set autochdir " automatically set current directory to directory of last opened 
 set hidden " allow auto-hiding of edited buffers
 set history=8192 " more history
 set nojoinspaces " suppress inserting two spaces between sentences
+set pastetoggle=<F9>
 
-""""""""""""""""""""""""""""""""""""
-"""=>编码设置<="""
-""""""""""""""""""""""""""""""""""""
+set completeopt=longest,preview,menu
+
+set clipboard+=unnamed
+
+
+"--------------------
+" Encoding config
+"--------------------
 "set encoding=utf-8
 "set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 set fileencodings=utf-8 " set file encoding
 set langmenu=zh_CN.UTF-8 " set language encoding
 set helplang=cn
 set confirm
-
-set pastetoggle=<F9>
-
-set completeopt=longest,preview,menu
-
-set clipboard+=unnamed
 
 "--------------------
 " Misc configurations
@@ -169,7 +170,7 @@ packloadall
 silent! helptags ALL
 " 设置fzf.vim快捷键
 nnoremap <silent> <C-p> :Files<CR>
-nnoremap <leader>g :Rg<Cr>
+nnoremap <Leader>g :Rg<CR>
 
 " 设置NerdTree
 map <F3> :NERDTreeMirror<CR>
