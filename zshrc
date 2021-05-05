@@ -1,3 +1,7 @@
+if [ -f ~/.zshrc_local_before ]; then
+	source ~/.zshrc_local_before
+fi
+
 ZSH_THEME="agnoster"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -97,9 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias chcolor='/data/data/com.termux/files/home/.termux/colors.sh'
-alias chfont='/data/data/com.termux/files/home/.termux/fonts.sh'
-source /data/data/com.termux/files/home/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PYTHONSTARTUP=$HOME/.pythonrc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PYTHONSTARTUP=$HOME/.pythonrc
+
+if [ -f ~/.zshrc_local_after ]; then
+	source ~/.zshrc_local_after
+fi

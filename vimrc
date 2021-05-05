@@ -261,3 +261,8 @@ let g:ale_linters = {
 \   'c': ['clang'],
 \}
 
+" 当地vimrc设置，位置位于~/.vimrc_local
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+	source $LOCALFILE
+endif
