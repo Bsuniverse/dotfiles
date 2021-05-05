@@ -1,237 +1,172 @@
-"开启相关插件"
-""侦测文件类型"
+set nocompatible " no vi compatible
 filetype on
-"载入文件类型插件"
-"filetype plugin on
-""为特定文件类型载入相关缩进文件"
+filetype plugin indent on " enable file type detection
 
-"保存全局变量"
-"set viminfo+=!
-"
 ""带有如下符号的单词不要被换行分割"
 set iskeyword+=_,$,@,%,#,-
-
-"通过使用: commands命令，告诉我们文件的哪一行被改变过"
-"set report=0
-"
 ""被分割的窗口间显示空白，便于阅读"
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 
-"""""""""""""""""""""""""""""""""
-"""=>字体和颜色<="""
-"""""""""""""""""""""""""""""""""
-"自动开启语法高亮"
-syntax enable
-"
-""设置字体"
+"--------------------
+" Font and color
+"--------------------
 "set guifont=dejaVu\ Sans\ MONO\ 10
 "set guifont=Courier_New:h10:cANSI
-"
-""设置颜色"
-colorscheme desert
-"
-""高亮显示当前行"
-set cursorline
-hi cursorline guibg=#00ff00
-hi CursorColumn guibg=#00ff00
 
-"高亮显示普通txt文件（需要txt.vim脚本）"
-"au BufRead,BufNewFile *  setfiletype txt
-"
-""""""""""""""""""""""""""""""""
-"""=>代码折叠功能<="""
-"""""""""""""""""""""""""""""""
-"激活折叠功能"
-"set foldenable
-""set nofen（这个是关闭折叠功能）"
+" highlight current line, but only in active window
+augroup CursorLineOnlyInActiveWindow
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
+augroup END
 
-"设置按照语法方式折叠（可简写set fdm=XX）"
-""有6种折叠方法：
-"manual   手工定义折叠"
-""indent   更多的缩进表示更高级别的折叠"
-"expr     用表达式来定义折叠"
-""syntax   用语法高亮来定义折叠"
-"diff     对没有更改的文本进行折叠"
-""marker   对文中的标志进行折叠"
-set foldmethod=manual
-"set fdl=0（这个是不选用任何折叠方法）"
-"
-""设置折叠区域的宽度"
-"如果不为0，则在屏幕左侧显示一个折叠标识列
-""分别用“-”和“+”来表示打开和关闭的折叠
-set foldcolumn=0
+" vim can autodetect this based on $TERM (e.g. 'xterm-256color')
+" but it can be set to force 256 colors
+" set t_Co=256
+if has('gui_running')
+    colorscheme solarized
+    let g:lightline = {'colorscheme': 'solarized'}
+elseif &t_Co < 256
+    colorscheme default
+    set nocursorline " looks bad in this mode
+else
+    set background=dark
+    let g:solarized_termcolors=256 " instead of 16 color with mapping in terminal
+    colorscheme solarized
+    " customized colors
+    highlight SignColumn ctermbg=234
+    highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
+    highlight StatusLineNC cterm=bold ctermfg=245 ctermbg=235
+    let g:lightline = {'colorscheme': 'default'}
+    highlight SpellBad cterm=underline
+    " patches
+    highlight CursorLineNr cterm=NONE
+endif
 
-"设置折叠层数为3"
-"setlocal foldlevel=3
-"
-""设置为自动关闭折叠"
-set foldclose=all
-
-"用空格键来代替zo和zc快捷键实现开关折叠"
-""zo O-pen a fold (打开折叠)
-"zc C-lose a fold (关闭折叠)
-""zf F-old creation (创建折叠)
-"nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-"
-""""""""""""""""""""""""""""""""""""
-"""=>文字处理<="""
-"""""""""""""""""""""""""""""""""""
-"使用空格来替换Tab"
-"set expandtab
-"
-""设置所有的Tab和缩进为4个空格"
+"--------------------
+" Indent and editing
+"--------------------
+syntax on " turn on syntax highlighting
+set shortmess+=I " disable startup message
+set nu " number lines
+set rnu " relative line numbering
+set hlsearch " highlight search
+set incsearch " incremental search (as sting is being typed)
+" use 4 spaces instead of tabs during formatting
+set expandtab
 set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" 
+set ai " set auto indent
+set wrap " change line with
+" tab completion for files/buferss
+set wildmode=longest,list
+set wildmenu
 
-"缩进，自动缩进（继承前一行的缩进）"
-""set autoindent 命令打开自动缩进，是下面配置的缩写
-"可使用autoindent命令的简写，即“:set ai”和“:set noai”
-""还可以使用“:set ai sw=4”在一个命令中打开缩进并设置缩进级别
-set ai
-set cindent
+set ruler " open ruler
 
-"智能缩进"
-"set si
-"
-""自动换行”
-set wrap
-
-"设置软宽度"
-"set sw=4
-"
-""行内替换"
-set gdefault
-
-""""""""""""""""""""""""""""""""""
-"""=>Vim 界面<="""
-""""""""""""""""""""""""""""""""""
-"增强模式中的命令行自动完成操作"
-"set wildmenu
-"
-""显示标尺"
-set ruler
-
-"设置命令行的高度"
-"set cmdheight=1
-"
-""显示行数"
-set nu
-""显示相对行数，方便计数跳跃
-set relativenumber
-
-"不要图形按钮"
-"set go=
-"
-""在执行宏命令时，不进行显示重绘；在宏命令执行完成后，一次性重绘，以便提高性能"
-set lz
-
-"使backspace正常处理indent, eol, start等"
-set backspace=eol,start,indent
-"
-""允许空格键和光标键跨越行边界"
-set whichwrap+=<,>,h,l
-
-"设置魔术"
-"set magic
-"
-""关闭遇到错误时的声音提示"
-"关闭错误信息响铃"
-"set noerrorbells
-"
-""关闭使用可视响铃代替呼叫"
-set novisualbell
-
-"高亮显示匹配的括号([{和}])"
-"set showmatch
-"
-""匹配括号高亮的时间（单位是十分之一秒）"
-set mat=2
-
-"光标移动到buffer的顶部和底部时保持3行距离"
-"set scrolloff=3
-"
-""搜索逐字符高亮"
-set hlsearch
-set incsearch
-
-"搜索时不区分大小写"
-""还可以使用简写（“:set ic”和“:set noic”）"
+set showmatch " show matching braces when text indicator is over them
 set ignorecase
 "If there contains andy capital letters, the search becomes case sensitive"
 set smartcase
-"Enable mouse support"
-set mouse+=a
-
-"用浅色高亮显示当前行"
-"autocmd InsertLeave * se nocul
-"autocmd InsertEnter * se cul
-"
-""输入的命令显示出来，看的清楚"
-set showcmd
+set mouse+=a " enable mouse mode
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+set nofoldenable " disable folding by default
+set showcmd " show command line
+set listchars=tab:>>,nbsp:~ " set list to see tabs and non-breakable spaces
+set lbr " line break
+set scrolloff=5 " show lines above and below cursor (when possible)
+set noshowmode " hide mode
+set laststatus=2
+set backspace=indent,eol,start " allow backspacing over everything
+set timeout timeoutlen=1000 ttimeoutlen=100 " fix slow O inserts
+set lazyredraw " skip redrawing screen in some cases
+set autochdir " automatically set current directory to directory of last opened file
+set hidden " allow auto-hiding of edited buffers
+set history=8192 " more history
+set nojoinspaces " suppress inserting two spaces between sentences
 
 """"""""""""""""""""""""""""""""""""
 """=>编码设置<="""
 """"""""""""""""""""""""""""""""""""
-"设置编码"
 "set encoding=utf-8
 "set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
-"
-""设置文件编码"
-set fileencodings=utf-8
-
-"设置终端编码"
-"set termencoding=utf-8
-"
-""设置语言编码"
-set langmenu=zh_CN.UTF-8
+set fileencodings=utf-8 " set file encoding
+set langmenu=zh_CN.UTF-8 " set language encoding
 set helplang=cn
-
-"""""""""""""""""""""""""""""
-"""=>其他设置<="""
-"""""""""""""""""""""""""""""
-"开启新行时使用智能自动缩进"
-"set smartindent
-"set cin
-"set showmatch
-"
-""在处理未保存或只读文件的时候，弹出确认"
 set confirm
 
-"隐藏工具栏"
-"set guioptions-=T
-"
-""隐藏菜单栏"
-set guioptions-=m
-
-"置空错误铃声的终端代码"
-"set vb t_vb=
-"
-""显示状态栏（默认值为1，表示无法显示状态栏）"
-set laststatus=2
-
-"状态行显示的内容"
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\
-"%{strftime(\"%d/%m/%y\ -\ %H:%M\")}
-"
-""粘贴不换行问题的解决方法"
 set pastetoggle=<F9>
 
-"
-""文件类型自动检测，代码智能补全"
 set completeopt=longest,preview,menu
 
-"共享剪切板"
-"set clipboard+=unnamed
-"
-""从不备份"
+set clipboard+=unnamed
+
+"--------------------
+" Misc configurations
+"--------------------
+
+" unbind keys
+map <C-a> <Nop>
+map <C-x> <Nop>
+nmap Q <Nop>
+
+" disable audible bell
+set noerrorbells visualbell t_vb=
+
+" open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" movement relative to display lines
+nnoremap <silent> <Leader>d :call ToggleMovementByDisplayLines()<CR>
+function SetMovementByDisplayLines()
+    noremap <buffer> <silent> <expr> k v:count ? 'k' : 'gk'
+    noremap <buffer> <silent> <expr> j v:count ? 'j' : 'gj'
+    noremap <buffer> <silent> 0 g0
+    noremap <buffer> <silent> $ g$
+endfunction
+function ToggleMovementByDisplayLines()
+    if !exists('b:movement_by_display_lines')
+        let b:movement_by_display_lines = 0
+    endif
+    if b:movement_by_display_lines
+        let b:movement_by_display_lines = 0
+        silent! nunmap <buffer> k
+        silent! nunmap <buffer> j
+        silent! nunmap <buffer> 0
+        silent! nunmap <buffer> $
+    else
+        let b:movement_by_display_lines = 1
+        call SetMovementByDisplayLines()
+    endif
+endfunction
+
+" toggle relative numbering
+nnoremap <C-n> :set rnu!<CR>
+
+" save read-only files
+command -nargs=0 Sudow w !sudo tee % >/dev/null
+
 set nobackup
 set noswapfile
 
-set runtimepath+=~/.fzf
-set runtimepath^=~/.vim/pack/vendor/start//nerdcommenter
+"---------------------
+" Plugin configuration
+"---------------------
+"
 packloadall
 silent! helptags ALL
-"设置历史记录步数"
-set history=1000
 " 设置fzf.vim快捷键
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <leader>g :Rg<Cr>
