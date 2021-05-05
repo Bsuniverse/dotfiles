@@ -2,16 +2,16 @@ set nocompatible " no vi compatible
 filetype on
 filetype plugin indent on " enable file type detection
 
-""带有如下符号的单词不要被换行分割"
+" 带有如下符号的单词不要被换行分割"
 set iskeyword+=_,$,@,%,#,-
-""被分割的窗口间显示空白，便于阅读"
+" 被分割的窗口间显示空白，便于阅读"
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 
 "--------------------
 " Font and color
 "--------------------
-"set guifont=dejaVu\ Sans\ MONO\ 10
-"set guifont=Courier_New:h10:cANSI
+" set guifont=dejaVu\ Sans\ MONO\ 10
+" set guifont=Courier_New:h10:cANSI
 
 " highlight current line, but only in active window
 augroup CursorLineOnlyInActiveWindow
@@ -59,7 +59,7 @@ set ruler " open ruler
 
 set showmatch " show matching braces when text indicator is over them
 set ignorecase
-"If there contains andy capital letters, the search becomes case sensitive"
+" If there contains andy capital letters, the search becomes case sensitive"
 set smartcase
 set mouse+=a " enable mouse mode
 if &term =~ '^screen'
@@ -90,8 +90,8 @@ set clipboard+=unnamed
 "--------------------
 " Encoding config
 "--------------------
-"set encoding=utf-8
-"set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+" set encoding=utf-8
+" set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 set fileencodings=utf-8 " set file encoding
 set langmenu=zh_CN.UTF-8 " set language encoding
 set helplang=cn
@@ -105,6 +105,9 @@ set confirm
 map <C-a> <Nop>
 map <C-x> <Nop>
 nmap Q <Nop>
+
+" change default <Leader> to space
+let mapleader = "\<space>"
 
 " disable audible bell
 set noerrorbells visualbell t_vb=
@@ -155,9 +158,10 @@ set noswapfile
 "---------------------
 " Plugin configuration
 "---------------------
-"
+
 packloadall
 silent! helptags ALL
+
 " 设置fzf.vim快捷键
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <Leader>g :Rg<CR>
@@ -165,6 +169,9 @@ nnoremap <Leader>g :Rg<CR>
 " 设置NerdTree
 map <F3> :NERDTreeMirror<CR>
 map <F3> :NERDTreeToggle<CR>
+
+" Setting NerdCommenter
+let g:NERDSpaceDelims=1
 
 " Ale linters settings
 let g:ale_sign_column_always = 1
