@@ -32,3 +32,6 @@
 [submodule "vim/pack/vendor/start/vim-colors-solarized"]
 	path = vim/pack/vendor/start/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "zshcustom/plugins/git-open"]
+	path = zshcustom/plugins/git-open
+	url = https://github.com/paulirish/git-open.git

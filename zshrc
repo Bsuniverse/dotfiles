@@ -72,7 +72,15 @@ ZSH_CUSTOM=~/.zshcustom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z extract web-search zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+    git 
+    z 
+    extract 
+    web-search 
+    zsh-autosuggestions 
+    zsh-syntax-highlighting
+    git-open
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,3 +118,5 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 if [ -f ~/.zshrc_local_after ]; then
 	source ~/.zshrc_local_after
 fi
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow' 
