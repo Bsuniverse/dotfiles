@@ -23,8 +23,8 @@ augroup END
 " vim can autodetect this based on $TERM (e.g. 'xterm-256color')
 " but it can be set to force 256 colors
 " set t_Co=256
-colorscheme solarized
-let g:lightline = {'colorscheme': 'solarized'}
+colorscheme desert
+let g:lightline = {'colorscheme': 'default'}
 " customized colors
 highlight SignColumn ctermbg=234
 highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
