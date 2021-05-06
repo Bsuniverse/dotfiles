@@ -17,6 +17,7 @@
     ~/.inputrc:
     ~/.pythonrc:
     ~/.tmux.conf:
+    ~/.tmux.conf.local:
 
 - shell:
     - [git submodule sync --recursive, Installing submodules]
