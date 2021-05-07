@@ -120,3 +120,4 @@ if [ -f ~/.zshrc_local_after ]; then
 fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow' 
+export DEFAULT_USER="$(whoami)"
