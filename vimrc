@@ -23,8 +23,19 @@ augroup END
 " vim can autodetect this based on $TERM (e.g. 'xterm-256color')
 " but it can be set to force 256 colors
 " set t_Co=256
-colorscheme desert
-let g:lightline = {'colorscheme': 'default'}
+" colorscheme desert
+autocmd vimenter * ++nested colorscheme gruvbox
+set background=dark
+let g:lightline = {
+      \ 'colorscheme': 'default',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 " customized colors
 highlight SignColumn ctermbg=234
 highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
@@ -50,8 +61,8 @@ set shiftwidth=4
 set softtabstop=4
 " 
 set ai " set auto indent
-set wrap " change line with
-" tab completion for files/buferss
+set nowrap " not change line 
+" tab completion for files/bufferss
 set wildmode=longest,list
 set wildmenu
 
