@@ -61,7 +61,7 @@ set shiftwidth=4
 set softtabstop=4
 " 
 set ai " set auto indent
-set nowrap " not change line 
+set wrap " change line 
 " tab completion for files/bufferss
 set wildmode=longest,list
 set wildmenu
@@ -199,7 +199,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 "文件内容发生变化时不进行检查
 let g:ale_lint_on_text_changed = 'never'
 "打开文件时不进行检查
-let g:ale_lint_on_enter = 0
+let g:ale_lint_on_enter = 1
 let g:ale_linters = {
 \   'c++': ['clang'],
 \   'c': ['clang'],
