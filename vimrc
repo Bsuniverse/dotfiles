@@ -177,10 +177,6 @@ silent! helptags ALL
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <Leader>g :Rg<CR>
 
-" 设置NerdTree
-map <F3> :NERDTreeMirror<CR>
-map <F3> :NERDTreeToggle<CR>
-
 " Setting NerdCommenter
 let g:NERDSpaceDelims=1
 

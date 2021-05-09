@@ -44,3 +44,6 @@
 [submodule "vim/pack/vendor/start/vim-jsonc"]
 	path = vim/pack/vendor/start/vim-jsonc
 	url = git@github.com:kevinoid/vim-jsonc.git
+[submodule "vim/pack/vendor/start/defx.nvim"]
+	path = vim/pack/vendor/start/defx.nvim
+	url = git@github.com:Shougo/defx.nvim.git
