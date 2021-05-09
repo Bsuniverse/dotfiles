@@ -125,11 +125,8 @@ export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat 
 fzfp() {
 fzf --preview '[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always{} || rougify {}  || highlight -O ansi -l {} || coderay {} || cat {}) 2> /dev/null | head -500'
 }
-#文件查找
-alias fzf.w="fzf --height 40% --layout reverse --info inline --border \
-    --preview 'file {}' --preview-window down:1:noborder"
-#文件预览
-alias fzf.p="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+# preview options.
+# alias fzf.p="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 fzf-down() {
   fzf --height 50% --min-height 20 --border --bind ctrl-/:toggle-preview "$@"
