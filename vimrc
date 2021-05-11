@@ -181,7 +181,11 @@ nnoremap <Leader>g :Rg<CR>
 let g:NERDSpaceDelims=1
 
 " Setting coc.vim settings
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-clangd', 'coc-markdownlint', 'coc-pyright', 'coc-snippets']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-clangd', 'coc-markdownlint', 'coc-pyright', 'coc-snippets', 'coc-explorer']
+
+" coc-explorer key-binding.
+:nnoremap <space>e :CocCommand explorer<CR>
+
 
 " Use tab for trigger completion with characters ahead and navigate.
 " " NOTE: Use command ':verbose imap <tab>' to make sure tab is not
