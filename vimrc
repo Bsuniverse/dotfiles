@@ -93,7 +93,7 @@ set history=8192 " more history
 set nojoinspaces " suppress inserting two spaces between sentences
 set pastetoggle=<F9>
 
-set completeopt=longest,preview,menu
+set completeopt=menuone,noinsert,noselect
 
 set clipboard+=unnamed
 
@@ -121,7 +121,7 @@ nmap Q <Nop>
 let mapleader = "\<space>"
 
 " disable audible bell
-set noerrorbells visualbell t_vb=
+set noerrorbells 
 
 " open new split panes to right and bottom, which feels more natural
 set splitbelow
