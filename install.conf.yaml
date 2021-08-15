@@ -12,6 +12,7 @@
     ~/.vim:
     ~/.oh-my-zsh:
     ~/.zshcustom:
+    ~/.p10k.zsh:
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.inputrc:
