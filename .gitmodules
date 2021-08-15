@@ -47,3 +47,6 @@
 [submodule "vim/pack/vendor/start/defx.nvim"]
 	path = vim/pack/vendor/start/defx.nvim
 	url = git@github.com:Shougo/defx.nvim.git
+[submodule "zshcustom/themes/powerlevel10k"]
+	path = zshcustom/themes/powerlevel10k
+	url = https://gitee.com/romkatv/powerlevel10k.git
