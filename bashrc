@@ -21,3 +21,4 @@ IFS=: read -ra selected < <(
 if [ -f ~/.bashrc_local_after ]; then
 	source ~/.bashrc_local_after
 fi
+. "$HOME/.cargo/env"
