@@ -54,7 +54,7 @@
 [submodule "vim/pack/vendor/start/coc.nvim"]
 	path = vim/pack/vendor/start/coc.nvim
 	url = git@github.com:neoclide/coc.nvim.git
-	branch = master
+	branch = release
 [submodule "vim/pack/vendor/start/vim-jsonc"]
 	path = vim/pack/vendor/start/vim-jsonc
 	url = git@github.com:kevinoid/vim-jsonc.git
