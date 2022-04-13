@@ -6,48 +6,64 @@
 [submodule "vim/pack/vendor/start/nerdcommenter"]
 	path = vim/pack/vendor/start/nerdcommenter
 	url = https://github.com/preservim/nerdcommenter.git
+	branch = master
 [submodule "vim/pack/vendor/start/ale"]
 	path = vim/pack/vendor/start/ale
 	url = https://github.com/dense-analysis/ale.git
+	branch = master
 [submodule "vim/pack/vendor/start/Fzf.vim"]
 	path = vim/pack/vendor/start/Fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+	branch = master
 [submodule "vim/pack/vendor/start/lightline"]
 	path = vim/pack/vendor/start/lightline
 	url = https://github.com/itchyny/lightline.vim
+	branch = master
 [submodule "vim/pack/vendor/start/nerdtree"]
 	path = vim/pack/vendor/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
+	branch = master
 [submodule "vim/pack/vendor/start/fzf"]
 	path = vim/pack/vendor/start/fzf
 	url = https://github.com/junegunn/fzf.git
+	branch = master
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+	branch = master
 [submodule "zshcustom/plugins/zsh-autosuggestions"]
 	path = zshcustom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
+	branch = master
 [submodule "zshcustom/plugins/zsh-syntax-highlighting"]
 	path = zshcustom/plugins/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+	branch = master
 [submodule "zshcustom/plugins/git-open"]
 	path = zshcustom/plugins/git-open
 	url = https://github.com/paulirish/git-open.git
+	branch = master
 [submodule "vim/pack/vendor/start/fugitive"]
 	path = vim/pack/vendor/start/fugitive
 	url = git@github.com:tpope/vim-fugitive.git
+	branch = master
 [submodule "vim/pack/vendor/start/gruvbox"]
 	path = vim/pack/vendor/start/gruvbox
 	url = git@github.com:morhetz/gruvbox.git
+	branch = master
 [submodule "vim/pack/vendor/start/coc.nvim"]
 	path = vim/pack/vendor/start/coc.nvim
 	url = git@github.com:neoclide/coc.nvim.git
+	branch = master
 [submodule "vim/pack/vendor/start/vim-jsonc"]
 	path = vim/pack/vendor/start/vim-jsonc
 	url = git@github.com:kevinoid/vim-jsonc.git
+	branch = master
 [submodule "vim/pack/vendor/start/defx.nvim"]
 	path = vim/pack/vendor/start/defx.nvim
 	url = git@github.com:Shougo/defx.nvim.git
+	branch = master
 [submodule "zshcustom/themes/powerlevel10k"]
 	path = zshcustom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+	branch = master
