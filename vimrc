@@ -120,6 +120,9 @@ nmap Q <Nop>
 " change default <Leader> to space
 let mapleader = "\<space>"
 
+" Set tmux as REPL
+let g:slime_target = "tmux"
+
 " disable audible bell
 set noerrorbells 
 

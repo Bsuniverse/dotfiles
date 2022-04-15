@@ -62,3 +62,15 @@
 [submodule "vim/pack/vendor/start/tagbar"]
 	path = vim/pack/vendor/start/tagbar
 	url = git@github.com:preservim/tagbar.git
+[submodule "vim/pack/vendor/start/surround.vim"]
+	path = vim/pack/vendor/start/surround.vim
+	url = https://tpope.io/vim/surround.git
+[submodule "vim/pack/vendor/start/repeat.vim"]
+	path = vim/pack/vendor/start/repeat.vim
+	url = https://tpope.io/vim/repeat.git
+[submodule "vim/pack/vendor/start/vim-sexp"]
+	path = vim/pack/vendor/start/vim-sexp
+	url = git@github.com:guns/vim-sexp.git
+[submodule "vim/pack/vendor/start/vim-sexp-mappings"]
+	path = vim/pack/vendor/start/vim-sexp-mappings
+	url = git@github.com:tpope/vim-sexp-mappings-for-regular-people.git
