@@ -184,7 +184,7 @@ let g:NERDSpaceDelims=1
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-clangd', 'coc-markdownlint', 'coc-pyright', 'coc-snippets', 'coc-explorer']
 
 " coc-explorer key-binding.
-:nnoremap <space>e :CocCommand explorer<CR>
+:nnoremap <Leader>e :CocCommand explorer<CR>
 
 
 " Use tab for trigger completion with characters ahead and navigate.

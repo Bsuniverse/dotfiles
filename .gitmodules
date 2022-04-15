@@ -19,10 +19,6 @@
 	path = vim/pack/vendor/start/lightline
 	url = https://github.com/itchyny/lightline.vim
 	branch = master
-[submodule "vim/pack/vendor/start/nerdtree"]
-	path = vim/pack/vendor/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
-	branch = master
 [submodule "vim/pack/vendor/start/fzf"]
 	path = vim/pack/vendor/start/fzf
 	url = https://github.com/junegunn/fzf.git
@@ -67,3 +63,6 @@
 	path = zshcustom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	branch = master
+[submodule "vim/pack/vendor/start/tagbar"]
+	path = vim/pack/vendor/start/tagbar
+	url = git@github.com:preservim/tagbar.git
