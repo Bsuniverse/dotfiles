@@ -55,10 +55,6 @@
 	path = vim/pack/vendor/start/vim-jsonc
 	url = git@github.com:kevinoid/vim-jsonc.git
 	branch = master
-[submodule "vim/pack/vendor/start/defx.nvim"]
-	path = vim/pack/vendor/start/defx.nvim
-	url = git@github.com:Shougo/defx.nvim.git
-	branch = master
 [submodule "zshcustom/themes/powerlevel10k"]
 	path = zshcustom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git

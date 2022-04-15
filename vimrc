@@ -133,6 +133,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Making switching between Vim and Terminal possible
+nnoremap <leader>t :stop<CR>
+
 " movement relative to display lines
 nnoremap <silent> <Leader>d :call ToggleMovementByDisplayLines()<CR>
 function SetMovementByDisplayLines()
@@ -226,6 +229,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" TagbarToggle to trace Classes or imports
+nmap <F8> :TagbarToggle<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
