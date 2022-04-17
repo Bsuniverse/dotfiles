@@ -180,8 +180,14 @@ packloadall
 silent! helptags ALL
 
 " 设置fzf.vim快捷键
+let g:fzf_buffers_jump = 1
+let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-x': 'vsplit' }
+
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <Leader>g :Rg<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 " Setting NerdCommenter
 let g:NERDSpaceDelims=1
