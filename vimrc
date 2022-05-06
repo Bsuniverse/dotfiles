@@ -95,8 +95,7 @@ set pastetoggle=<F9>
 
 set completeopt=menuone,noinsert,noselect
 
-set clipboard+=unnamed
-
+set clipboard^=unnamed,unnamedplus
 
 "--------------------
 " Encoding config
