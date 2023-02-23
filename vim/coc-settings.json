@@ -22,5 +22,6 @@
                "scheme"
            ]
        }
-    }
+    },
+    "snippets.ultisnips.pythonPrompt": false
 }
