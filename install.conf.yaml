@@ -10,6 +10,11 @@
     ~/.zshrc: 
     ~/.vimrc: 
     ~/.vim:
+    ~/.config/nvim:
+      create: true
+      glob: true
+      path: config/nvim/*
+      relink: true
     ~/.oh-my-zsh:
     ~/.zshcustom:
     ~/.p10k.zsh:

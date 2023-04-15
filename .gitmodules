@@ -74,3 +74,6 @@
 [submodule "vim/pack/vendor/start/vim-sexp-mappings"]
 	path = vim/pack/vendor/start/vim-sexp-mappings
 	url = git@github.com:tpope/vim-sexp-mappings-for-regular-people.git
+[submodule "config/nvim"]
+	path = config/nvim
+	url = https://github.com/LazyVim/starter
