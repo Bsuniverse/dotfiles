@@ -99,7 +99,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export LANG=en_US.UTF-8 
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR='nvim'
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
@@ -120,10 +120,29 @@ export EDITOR='vim'
 
 export PYTHONSTARTUP=$HOME/.pythonrc
 
+# asdf
+source $(brew --prefix asdf)/libexec/asdf.sh
+
+
+# zoxide
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(zoxide init zsh)"
+
+# yazi
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # fzf configuration.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # fzf stdin setting.
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
+# export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 # fzf extra setting.
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --color=bg+:#3c3836,bg:#32302f,spinner:#fb4934,hl:#928374,fg:#ebdbb2,header:#928374,info:#8ec07c,pointer:#fb4934,marker:#fb4934,fg+:#ebdbb2,prompt:#fb4934,hl+:#fb4934'
 # fzf Ctrl+T shortcut setting.
