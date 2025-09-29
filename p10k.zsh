@@ -51,7 +51,7 @@
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
     direnv                  # direnv status (https://direnv.net/)
-    asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+  # asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     anaconda                # conda environment (https://conda.io/)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
@@ -566,38 +566,7 @@
   # Custom icon.
   # typeset -g POWERLEVEL9K_DIRENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
-  ###############[ asdf: asdf version manager (https://github.com/asdf-vm/asdf) ]###############
-  # Default asdf color. Only used to display tools for which there is no color override (see below).
-  # Tip:  Override these parameters for ${TOOL} with POWERLEVEL9K_ASDF_${TOOL}_FOREGROUND and
-  # POWERLEVEL9K_ASDF_${TOOL}_BACKGROUND.
-  typeset -g POWERLEVEL9K_ASDF_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_BACKGROUND=7
 
-  # There are four parameters that can be used to hide asdf tools. Each parameter describes
-  # conditions under which a tool gets hidden. Parameters can hide tools but not unhide them. If at
-  # least one parameter decides to hide a tool, that tool gets hidden. If no parameter decides to
-  # hide a tool, it gets shown.
-  #
-  # Special note on the difference between POWERLEVEL9K_ASDF_SOURCES and
-  # POWERLEVEL9K_ASDF_PROMPT_ALWAYS_SHOW. Consider the effect of the following commands:
-  #
-  #   asdf local  python 3.8.1
-  #   asdf global python 3.8.1
-  #
-  # After running both commands the current python version is 3.8.1 and its source is "local" as
-  # it takes precedence over "global". If POWERLEVEL9K_ASDF_PROMPT_ALWAYS_SHOW is set to false,
-  # it'll hide python version in this case because 3.8.1 is the same as the global version.
-  # POWERLEVEL9K_ASDF_SOURCES will hide python version only if the value of this parameter doesn't
-  # contain "local".
-
-  # Hide tool versions that don't come from one of these sources.
-  #
-  # Available sources:
-  #
-  # - shell   `asdf current` says "set by ASDF_${TOOL}_VERSION environment variable"
-  # - local   `asdf current` says "set by /some/not/home/directory/file"
-  # - global  `asdf current` says "set by /home/username/file"
-  #
   # Note: If this parameter is set to (shell local global), it won't hide tools.
   # Tip:  Override this parameter for ${TOOL} with POWERLEVEL9K_ASDF_${TOOL}_SOURCES.
   typeset -g POWERLEVEL9K_ASDF_SOURCES=(shell local global)

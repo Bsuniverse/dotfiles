@@ -118,15 +118,8 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
 export PYTHONSTARTUP=$HOME/.pythonrc
-
-# asdf
-source $(brew --prefix asdf)/libexec/asdf.sh
-
-
-# zoxide
-export PATH="$HOME/.local/bin:$PATH"
-eval "$(zoxide init zsh)"
 
 # yazi
 function yy() {

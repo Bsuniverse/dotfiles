@@ -11,12 +11,7 @@ alias la="eza -labgh --icons=always --git"
 alias cp='cp -i'
 alias mv='mv -i'
 
-# Homebrew
-alias brs='brew search'
-alias bri='brew install'
-alias bric='brew install --cask'
-alias bro='brew info'
-alias bru='brew uninstall'
+
 
 # nvim
 alias nv='nvim'
