@@ -122,6 +122,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 
 # asdf
 source $(brew --prefix asdf)/libexec/asdf.sh
+eval "$(uv generate-shell-completion zsh)"
 
 
 # zoxide
